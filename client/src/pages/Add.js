@@ -10,7 +10,7 @@ const Add = () => {
     const [subagent, setSubagent] = useState("")
     const [phone, setPhone] = useState("")
     const [error, setError] = useState("")
-    const formHandler = (event) => {
+    const formHandler = async(event) => {
         event.preventDefault()
         setError("")
         if (username.length === 0) {
@@ -47,7 +47,7 @@ const Add = () => {
                 subagent: subagent,
                 phone: phone
             }
-            axios.post("http://localhost:8000/add",obj,config)
+            await axios.post("http://localhost:8000/add",obj,config)
         }
     }
     return (
@@ -59,7 +59,7 @@ const Add = () => {
                 <Navbar/>
                 <div className="container max-w-lg mx-auto flex-1 flex flex-col items-center justify-center px-2">
                     <div className="px-6 py-8 rounded shadow-md w-full text-black">
-                        <h1 className="mb-8 text-3xl text-center text-white">Sign up</h1>
+                        <h1 className="mb-8 text-3xl text-center text-white">Create Sub-Agent</h1>
                         <input
                             type="text"
                             className="block border border-grey-light w-full p-3 rounded mb-4"

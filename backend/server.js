@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const axios=require('axios')
 
 app.use(cors());
 app.use(express.json());
@@ -10,12 +11,17 @@ app.post("/add", (req, res) => {
     const info = req.body;
 })
 
+app.post("/check", (req, res) => {
+    const info = req.body;
+})
+
 app.post("/update", (req, res) => {
     const info = req.body;
 })
 
 app.post("/delete", (req, res) => {
     const info = req.body;
+    console.log(info)
 })
 
 app.post("/view", (req, res) => {
