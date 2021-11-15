@@ -4,16 +4,12 @@ import axios from "axios";
 
 const Delete = () => {
     const [username, setUsername] = useState("")
-    const [password, setPswd] = useState("")
     const [error, setError] = useState("")
     const formHandler = async (event) => {
         event.preventDefault();
         setError("")
         if (username.length === 0) {
             setError("Enter Username")
-        }
-        else if (password.length === 0) {
-            setError("Enter Password")
         }
         else {
             const config = {
@@ -22,8 +18,7 @@ const Delete = () => {
                 }
             }
             const obj = {
-                username: username,
-                password: password
+                username: username
             }
             await axios.post("http://localhost:8000/delete", obj, config)
         }
@@ -48,15 +43,6 @@ const Delete = () => {
                   }
                 }
                 placeholder="Username" />
-              <input
-                type="password"
-                className="block border border-grey-light w-full p-3 rounded mb-4"
-                name="password"
-                onChange={
-                  (event) => {
-                    setPswd(event.target.value)
-                  }}
-                placeholder="Password" />
               <button
                 type="submit"
                 onClick={formHandler}

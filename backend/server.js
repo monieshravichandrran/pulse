@@ -21,7 +21,6 @@ app.post("/update", (req, res) => {
 
 app.post("/delete", (req, res) => {
     const info = req.body;
-    console.log(info)
 })
 
 app.post("/view", (req, res) => {

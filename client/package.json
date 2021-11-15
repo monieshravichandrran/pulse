@@ -14,6 +14,8 @@
     "react-responsive-carousel": "^3.2.22",
     "react-router-dom": "^5.0.0",
     "react-scripts": "4.0.3",
+    "react-search": "^2.1.1",
+    "react-select": "^5.2.1",
     "web-vitals": "^0.2.4",
     "workbox-background-sync": "^5.1.4",
     "workbox-broadcast-update": "^5.1.4",
